@@ -40,6 +40,13 @@ export default {
   font-size: 26px;
   border-radius: 15px;
   border: 1px dotted black;
+  transition: all 0.3s ease;
+  background-color: white;
+  font-weight: bolder;
+}
+
+.card:hover {
+  transform: scale(2);
 }
 
 button {
