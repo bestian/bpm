@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="nav">
+    <div id="nav" class="no-print">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div>
@@ -28,5 +28,12 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+@media print {
+  .no-print {
+    display: none;
+    visibility: hidden;
+  }
 }
 </style>
