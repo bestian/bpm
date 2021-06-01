@@ -21,8 +21,8 @@
           </audio>
 
           <a name ="play" id = "play" @click = "play()" v-if = "data.h[idx]['='] || data.h[idx]['_']">
-            <span name="play_arrow" v-if="!playing">&gt;</span>
-            <span name="pause" v-else>||</span>
+            <span name="play_arrow" v-if="!playing"><i class="play icon"/></span>
+            <span name="pause" v-else><i class="pause icon"/></span>
           </a>
         </div>
 
@@ -34,6 +34,7 @@
     <div>
       子音:
       <select name="" v-model="z">
+        <option value="">--選擇並加入--</option>
         <option v-for ="o in ziying" :key="o">{{o}}</option>
       </select>
 
@@ -42,6 +43,7 @@
     <div>
       母音:
       <select name="" v-model="m">
+        <option value="">--選擇並加入--</option>
         <option v-for ="o in muying" :key="o">{{o}}</option>
       </select>
 
@@ -50,6 +52,7 @@
     <div>
       聲調:
       <select name="" v-model="d">
+        <option value="">--選擇並加入--</option>
         <option v-for ="o in diao" :key="o">{{o}}</option>
       </select>
 
@@ -487,6 +490,10 @@ export default {
   }
 
   input {
+    font-size: 22px;
+  }
+
+  button {
     font-size: 22px;
   }
 </style>

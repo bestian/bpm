@@ -1,10 +1,10 @@
 <template>
   <div id="app">
-    <div id="nav" class="no-print">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link> |
-      <router-link to="/game">Game</router-link>|
-      <router-link to="/word/萌">Quiz</router-link>
+    <div class="no-print ui menu">
+      <router-link to="/" class = "item">Home</router-link>
+      <router-link to="/about" class = "item">About</router-link>
+      <router-link to="/game" class = "item">Game</router-link>
+      <router-link to="/word/萌" class = "item">Quiz</router-link>
     </div>
     <router-view/>
   </div>
@@ -28,8 +28,8 @@
   color: #2c3e50;
 }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+.router-link-exact-active {
+  background-color: #42b983 !important;
 }
 
 @media print {
