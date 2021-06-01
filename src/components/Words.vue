@@ -1,5 +1,5 @@
 <template>
-  <div class="word">
+  <div class="word ui container">
     <div v-if="!err">
       <div v-for = "(b, idx) in bs" :key = "idx">
         <div v-if="idx == 0">
@@ -28,36 +28,45 @@
 
       </div>
     </div>
-    <input type="text" name="" v-model="ans" placeholder="輸入注音" @keyup.enter="check()"/>
-    <button @click="check()">送出</button>
+    <form class="ui form">
+      <div class="two fields">
+        <div class="field">
+          <input type="text" name="" v-model="ans" placeholder="輸入注音" @keyup.enter="check()"/>
+        </div>
+        <div class="left field">
+          <button @click="check()">送出</button>
+        </div>
+      </div>
 
-    <div>
-      子音:
-      <select name="" v-model="z">
-        <option value="">--選擇並加入--</option>
-        <option v-for ="o in ziying" :key="o">{{o}}</option>
-      </select>
+      <div class="three fields">
+        <div class="field">
+          子音:
+          <select name="" v-model="z">
+            <option value="">--選擇並加入--</option>
+            <option v-for ="o in ziying" :key="o">{{o}}</option>
+          </select>
+          <button @click="addZ()">加入</button>
+        </div>
+        <div class="field">
+          母音:
+          <select name="" v-model="m">
+            <option value="">--選擇並加入--</option>
+            <option v-for ="o in muying" :key="o">{{o}}</option>
+          </select>
 
-      <button @click="addZ()">加入</button>
-    </div>
-    <div>
-      母音:
-      <select name="" v-model="m">
-        <option value="">--選擇並加入--</option>
-        <option v-for ="o in muying" :key="o">{{o}}</option>
-      </select>
+          <button @click="addM()">加入</button>
+        </div>
+        <div class="field">
+          聲調:
+          <select name="" v-model="d">
+            <option value="">--選擇並加入--</option>
+            <option v-for ="o in diao" :key="o">{{o}}</option>
+          </select>
 
-      <button @click="addM()">加入</button>
-    </div>
-    <div>
-      聲調:
-      <select name="" v-model="d">
-        <option value="">--選擇並加入--</option>
-        <option v-for ="o in diao" :key="o">{{o}}</option>
-      </select>
-
-      <button @click="addD()">加入</button>
-    </div>
+          <button @click="addD()">加入</button>
+        </div>
+      </div>
+    </form>
   </div>
 </template>
 
@@ -459,6 +468,10 @@ export default {
     .p {
        /* font-size: .5em; */
     }
+  }
+
+  .left {
+    text-align: left;
   }
 
   .print {
