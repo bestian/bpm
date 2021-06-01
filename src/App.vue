@@ -3,7 +3,8 @@
     <div id="nav" class="no-print">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/game">Game</router-link>
+      <router-link to="/game">Game</router-link>|
+      <router-link to="/word/萌">Quiz</router-link>
     </div>
     <router-view/>
   </div>
