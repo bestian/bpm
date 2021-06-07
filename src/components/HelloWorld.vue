@@ -58,6 +58,7 @@ export default {
 
 .card:hover {
   transform: scale(2);
+  z-index: 999;
 }
 
 button {
